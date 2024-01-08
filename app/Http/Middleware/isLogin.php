@@ -17,10 +17,10 @@ class isLogin
     public function handle(Request $request, Closure $next): Response
     {
         if(Auth::check()){
-            // kalau Auth sudah mendeteksi ada riwayat login, maka diperbolehkan akses route terkait
+           
             return $next($request);
         } else {
-            // kalau tidak ada, diarahkan ke halaman login balik
+           
             return redirect()->route('login')->with('failed', 'Anda belum login!');
         }
     }
